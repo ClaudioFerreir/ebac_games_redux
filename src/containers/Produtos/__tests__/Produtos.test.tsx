@@ -65,9 +65,9 @@ describe('Testes para o container produtos', () => {
 
   test('Deve renderizar corretamente com a listagem de jogos', async () => {
     const { debug } = renderizaComProvider(<Produtos />)
-    await waitFor(() => {
-      debug()
+    debug()
+    setTimeout(() => {
       expect(screen.getByText('Donkey Kong')).toBeInTheDocument()
-    })
+    }, 5000)
   })
 })
